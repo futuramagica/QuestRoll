@@ -14,12 +14,14 @@ import java.io.File;
 
 public abstract class BaseQuestoryFragment extends Fragment {
 
-  private Questep questep;
-  private Questory questory;
+  Questep questep;
+  Questory questory;
   private CompositeDisposable disposable;
 
   public abstract void proccessMediaCached();
 
+  public BaseQuestoryFragment() {
+  }
 
   void getDataFromServerAndPopulateView() {
     disposable = new CompositeDisposable();
@@ -28,8 +30,6 @@ public abstract class BaseQuestoryFragment extends Fragment {
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribeWith(new QuestepObserver(getQuestep(), getQuestory(), this)));
-
-
   }
 
   boolean isCachedFileExists() {
@@ -41,7 +41,6 @@ public abstract class BaseQuestoryFragment extends Fragment {
     super.onDestroy();
     if (disposable != null) {
       disposable.clear();
-
     }
   }
 

@@ -1,6 +1,5 @@
 package com.questroll.rx;
 
-import android.support.v4.app.Fragment;
 import com.questroll.app.Helper;
 import com.questroll.model.Questep;
 import com.questroll.model.QuestepAudio;
@@ -12,7 +11,6 @@ import com.questroll.network.model.QuestepPOJO;
 import com.questroll.network.model.QuestoriesPOJO;
 import com.questroll.network.model.QuestoryPOJO;
 import com.questroll.ui.adapters.QuestoriesViewPagerAdapter;
-import com.questroll.ui.questories.QuestoryFragmentContent;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableSingleObserver;
 import java.util.ArrayList;
@@ -38,23 +36,15 @@ public class QuestoriesObserver extends DisposableSingleObserver<QuestoriesPOJO>
 
   @Override
   public void onSuccess(QuestoriesPOJO questoriesPOJO) {
-    // TODO all this can be putted to custom predicate to modify data
     processQuestories(questoriesPOJO);
-
-
   }
 
   private void processQuestories(QuestoriesPOJO questoriesPOJO) {
-
-    List<Questory> questoriesFromServer = new ArrayList<>();
     for (QuestoryPOJO questoryPOJO : questoriesPOJO.getQuestories()) {
       final Questory questory = getQuestory(questoryPOJO);
-
-      //QuestoryFragmentContent contentFragment = new QuestoryFragmentContent();
-      //contentFragment.setQuestory(questory);
       questories.add(questory);
-      questoriesViewPagerAdapter.notifyDataSetChanged();
     }
+    questoriesViewPagerAdapter.notifyDataSetChanged();
   }
 
   private Questory getQuestory(final QuestoryPOJO questoryPOJO) {

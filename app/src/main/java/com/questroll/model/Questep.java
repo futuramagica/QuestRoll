@@ -1,6 +1,9 @@
 package com.questroll.model;
 
-public class Questep {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Questep implements Parcelable {
 
   private QuestepType questepType;
   private String description;
@@ -8,6 +11,27 @@ public class Questep {
   private String fileId;
   private String fileExtension;
 
+  public Questep() {
+  }
+
+  protected Questep(Parcel in) {
+    description = in.readString();
+    fileEtag = in.readString();
+    fileId = in.readString();
+    fileExtension = in.readString();
+  }
+
+  public static final Creator<Questep> CREATOR = new Creator<Questep>() {
+    @Override
+    public Questep createFromParcel(Parcel in) {
+      return new Questep(in);
+    }
+
+    @Override
+    public Questep[] newArray(int size) {
+      return new Questep[size];
+    }
+  };
 
   public String getFileExtension() {
     return fileExtension;
@@ -47,5 +71,18 @@ public class Questep {
 
   public void setFileId(String fileId) {
     this.fileId = fileId;
+  }
+
+  @Override
+  public int describeContents() {
+    return 0;
+  }
+
+  @Override
+  public void writeToParcel(Parcel parcel, int i) {
+    parcel.writeString(description);
+    parcel.writeString(fileEtag);
+    parcel.writeString(fileId);
+    parcel.writeString(fileExtension);
   }
 }

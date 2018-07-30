@@ -1,7 +1,6 @@
 package com.questroll.ui.questories;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +23,10 @@ public class QuestoryAudioItemFragment extends BaseQuestoryFragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
+
+    this.questep = getArguments().getParcelable("questep");
+    this.questory = getArguments().getParcelable("questory");
+
     View view = inflater.inflate(R.layout.questoryitem_audio, container, false);
     questepAudio = view.findViewById(R.id.questepAudio);
     mediaController = new MediaController(getContext());
@@ -49,12 +52,9 @@ public class QuestoryAudioItemFragment extends BaseQuestoryFragment {
 
   private void handleVideoPlaying(boolean isVisibleToUser) {
     if (isVisibleToUser) {
-
       playVideo();
     } else {
-
       pauseVideo();
-
     }
   }
 

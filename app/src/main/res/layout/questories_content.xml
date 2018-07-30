@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_content"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+  android:id="@+id/main_content"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
 
-    <com.questroll.ui.questories.QuestoriesViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/questoriesViewPager"
-        />
+  <com.questroll.ui.questories.QuestoriesViewPager
+    android:id="@+id/questoriesViewPager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    />
+
 </RelativeLayout>

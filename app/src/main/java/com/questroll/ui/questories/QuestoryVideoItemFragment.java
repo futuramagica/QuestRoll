@@ -23,6 +23,9 @@ public class QuestoryVideoItemFragment extends BaseQuestoryFragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
+    this.questep = getArguments().getParcelable("questep");
+    this.questory = getArguments().getParcelable("questory");
+
     View view = inflater.inflate(R.layout.questoryitem_video, container, false);
     questepVideo = view.findViewById(R.id.questepVideo);
     mediaController = new MediaController(getContext());
@@ -49,12 +52,9 @@ public class QuestoryVideoItemFragment extends BaseQuestoryFragment {
 
   private void handleVideoPlaying(boolean isVisibleToUser) {
     if (isVisibleToUser) {
-
       playVideo();
     } else {
-
       pauseVideo();
-
     }
   }
 
