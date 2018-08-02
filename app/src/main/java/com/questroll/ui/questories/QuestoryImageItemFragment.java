@@ -39,4 +39,14 @@ public class QuestoryImageItemFragment extends BaseQuestoryFragment {
     Glide.with(this).load(Helper.getPathToCachedDataForQuestep(getQuestep(), getQuestory()))
         .into(questepImage);
   }
+
+  @Override
+  public void pauseMediaDisplay() {
+
+  }
+
+  @Override
+  public void startMediaDisplay() {
+
+  }
 }

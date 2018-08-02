@@ -12,11 +12,13 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 import java.io.File;
 
-public abstract class BaseQuestoryFragment extends Fragment {
+public abstract class BaseQuestoryFragment extends Fragment implements MediaIntefraceHandler {
 
   Questep questep;
   Questory questory;
   private CompositeDisposable disposable;
+  private boolean isActive;
+
 
   public abstract void proccessMediaCached();
 
@@ -65,4 +67,21 @@ public abstract class BaseQuestoryFragment extends Fragment {
   public void setQuestep(Questep questep) {
     this.questep = questep;
   }
+
+  @Override
+  public void onShow() {
+    isActive = true;
+  }
+
+  @Override
+  public void onHide() {
+    isActive = false;
+  }
+
+  @Override
+  public boolean isActiveMedia() {
+    return isActive;
+  }
+
+
 }

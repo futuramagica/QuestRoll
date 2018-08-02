@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
+import android.util.SparseArray;
+import com.questroll.app.Helper;
 import com.questroll.model.Questep;
 import com.questroll.model.Questory;
 import com.questroll.ui.questories.QuestoryAudioItemFragment;
@@ -13,16 +15,27 @@ import com.questroll.ui.questories.QuestoryVideoItemFragment;
 
 public class QuestoryViewPagerAdapter extends FragmentStatePagerAdapter {
 
+  private final FragmentManager fragmentManager;
   private Questory questory;
+  private SparseArray<Fragment> questepFragment = new SparseArray<>();
 
   public QuestoryViewPagerAdapter(FragmentManager fm) {
     super(fm);
-
+    this.fragmentManager = fm;
   }
 
   @Override
   public Fragment getItem(int position) {
-    return processQuesteps(questory.getQuesteps().get(position), questory);
+    Helper.logD("Called getItem in QuestoryViewPagerAdapter");
+
+    final Fragment fragment = questepFragment.get(position);
+    if (fragment != null) {
+      return fragment;
+    } else {
+      final Fragment created = processQuesteps(questory.getQuesteps().get(position), questory);
+      questepFragment.put(position, created);
+      return created;
+    }
   }
 
 
@@ -55,7 +68,7 @@ public class QuestoryViewPagerAdapter extends FragmentStatePagerAdapter {
 
   private Fragment proccessAudioItem(Questep questep, Questory questory) {
     QuestoryAudioItemFragment audioItemFragment = new QuestoryAudioItemFragment();
-
+    audioItemFragment.setRetainInstance(true);
     Bundle b = new Bundle();
     b.putParcelable("questory", questory);
     b.putParcelable("questep", questep);
@@ -86,5 +99,9 @@ public class QuestoryViewPagerAdapter extends FragmentStatePagerAdapter {
   @Override
   public int getCount() {
     return (questory != null) ? questory.getQuesteps().size() : 0;
+  }
+
+  public FragmentManager getFragmentManager() {
+    return fragmentManager;
   }
 }

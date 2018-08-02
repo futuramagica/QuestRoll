@@ -1,7 +1,12 @@
 package com.questroll;
 
+import android.Manifest;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import com.example.oleg.questroll.R;
 import com.questroll.app.Helper;
@@ -26,6 +31,7 @@ public class Questories extends AppCompatActivity {
   private ApiService apiService;
   private CompositeDisposable disposable = new CompositeDisposable();
 
+  private final int MY_PERMISSIONS_REQUEST_RECORD_AUDIO = 9976;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -36,15 +42,28 @@ public class Questories extends AppCompatActivity {
   }
 
   private void initQuestoriesViewPager() {
+
+    getAudioRecordPermission();// TODO this has to be changed
+
     Helper.setApplicationContext(getApplicationContext());
+    final FragmentManager supportFragmentManager = getSupportFragmentManager();
     questoriesViewPager = findViewById(R.id.questoriesViewPager);
     questoriesViewPager.addOnPageChangeListener(new CircularViewPagerHandler(questoriesViewPager));
     apiService = ApiClient.getClient(getApplicationContext()).create(ApiService.class);
-    questoriesViewPagerAdapter = new QuestoriesViewPagerAdapter(getSupportFragmentManager(),
+    questoriesViewPagerAdapter = new QuestoriesViewPagerAdapter(supportFragmentManager,
         questories);
     questoriesViewPager.setAdapter(questoriesViewPagerAdapter);
     questoriesViewPager.setOffscreenPageLimit(2);
     getQuestories();
+  }
+
+  private void getAudioRecordPermission() {
+    if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
+        != PackageManager.PERMISSION_GRANTED) {
+      ActivityCompat
+          .requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO},
+              MY_PERMISSIONS_REQUEST_RECORD_AUDIO);
+    }
   }
 
   @Override

@@ -6,13 +6,6 @@
     android:id="@+id/fragmentVideoId"
     tools:context="com.questroll.ui.questories.QuestoryVideoItemFragment">
     <!-- TODO: remember about colors          android:background="@color/colorPrimary"-->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        android:layout_margin="0dp"
-        >
-
 
       <VideoView
         android:id="@+id/questepVideo"
@@ -21,20 +14,12 @@
         android:layout_centerInParent="true" />
 
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="37dp"
-            android:layout_height="38dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginEnd="12dp"
-            android:layout_marginTop="198dp"
-            android:background="@android:color/transparent"
-            android:text="Q"
-            android:textColor="#FF4081"
-            android:textSize="24sp" />
-
-
-    </RelativeLayout>
+  <ImageButton
+    android:id="@+id/videoMediaButton"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_centerInParent="true"
+    android:background="@android:color/transparent"
+    android:visibility="invisible"/>
 
 </RelativeLayout>

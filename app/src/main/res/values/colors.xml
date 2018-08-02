@@ -3,4 +3,9 @@
     <color name="colorPrimary">#83e5c0</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+  <!-- Equalizer values -->
+  <color name="colorStarLine">#00f7ff</color>
+  <color name="colorEndLine">#c8455c</color>
+
 </resources>
