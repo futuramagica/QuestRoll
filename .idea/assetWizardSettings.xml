@@ -19,8 +19,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_button_pause" />
-                            <entry key="sourceFile" value="C:\Users\Oleg\Downloads\if_25_Pause_106220.svg" />
+                            <entry key="height" value="25" />
+                            <entry key="outputName" value="ic_question_mark_25" />
+                            <entry key="overrideSize" value="true" />
+                            <entry key="sourceFile" value="C:\Users\Oleg\Downloads\question-mark.svg" />
+                            <entry key="width" value="25" />
                           </map>
                         </option>
                       </PersistentState>

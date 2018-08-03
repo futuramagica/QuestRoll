@@ -7,5 +7,7 @@
   <!-- Equalizer values -->
   <color name="colorStarLine">#00f7ff</color>
   <color name="colorEndLine">#c8455c</color>
+  <color name="questepBackgroundColor">#00bee8</color>
+
 
 </resources>

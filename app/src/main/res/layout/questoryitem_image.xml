@@ -3,11 +3,119 @@
   android:id="@+id/fragmentImageId"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="@color/questepBackgroundColor"
   tools:context="com.questroll.ui.questories.QuestoryImageItemFragment">
 
   <ImageView
     android:id="@+id/questepImage"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"/>
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:layout_above="@+id/questAddButtonOnImageView"
+    android:layout_alignParentStart="true"
+    android:background="@android:color/white"/>
+
+  <ImageButton
+    android:id="@+id/questAddButtonOnImageView"
+    android:layout_width="50dp"
+    android:layout_height="45dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_add_25"/>
+
+  <ImageButton
+    android:id="@+id/questUserButtonOnImageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="14dp"
+    android:layout_alignParentEnd="true"
+    android:layout_alignTop="@+id/searchButtonOnImageView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_user_25"/>
+
+  <ImageButton
+    android:id="@+id/searchButtonOnImageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="80dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignTop="@+id/homeButtonOnImageView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_searcher_25"/>
+
+  <ImageButton
+    android:id="@+id/questoryOwnerButtonOnImageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="185dp"
+    android:layout_alignParentTop="true"
+    android:layout_alignStart="@+id/questUserButtonOnImageView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_account_25"/>
+
+  <ImageButton
+    android:id="@+id/questoryShareButtonOnImageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="129dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignStart="@+id/questUserButtonOnImageView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_share_white_25"/>
+
+  <ImageButton
+    android:id="@+id/homeButtonOnImageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="13dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignTop="@+id/notificationsButtonOnImageView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_home_25"/>
+
+  <ImageButton
+    android:id="@+id/notificationsButtonOnImageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:layout_marginEnd="89dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentEnd="true"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_notification_25"/>
+
+  <ImageButton
+    android:id="@+id/questepCommentsButtonOnImageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="74dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignStart="@+id/questUserButtonOnImageView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_chat_25"/>
+
+  <ImageButton
+    android:id="@+id/questepLikeButtonOnImageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="171dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignStart="@+id/questUserButtonOnImageView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_favorite_heart_button_25"/>
+
+  <ImageButton
+    android:id="@+id/questoryEnrollButtonOnImageView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignStart="@+id/questUserButtonOnImageView"
+    android:layout_centerVertical="true"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_question_mark_25"/>
 
 </RelativeLayout>

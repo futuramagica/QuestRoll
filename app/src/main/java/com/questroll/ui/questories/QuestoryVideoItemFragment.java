@@ -118,7 +118,7 @@ public class QuestoryVideoItemFragment extends BaseQuestoryFragment {
   private void pauseVideo() {
     if (questepVideo != null) {
       questepVideo.pause();
-//      mediaController.hide();
+
     }
   }
 
@@ -137,6 +137,12 @@ public class QuestoryVideoItemFragment extends BaseQuestoryFragment {
     }
   }
 
+  @Override
+  public void onPause() {
+    super.onPause();
+    onHide();
+    pauseVideo();
+  }
   @Override
   public void pauseMediaDisplay() {
     pauseVideo();

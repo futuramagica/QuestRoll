@@ -39,15 +39,11 @@ public class QuestoryAudioItemFragment extends BaseQuestoryFragment implements
     this.questep = getArguments().getParcelable("questep");
     this.questory = getArguments().getParcelable("questory");
 
-    if (audioView == null) {
-      audioView = inflater.inflate(R.layout.questoryitem_audio, container, false);
-      if (isCachedFileExists()) {
-        proccessMediaCached();
-      } else {
-        getDataFromServerAndPopulateView();
-      }
+    audioView = inflater.inflate(R.layout.questoryitem_audio, container, false);
+    if (isCachedFileExists()) {
+      proccessMediaCached();
     } else {
-      ((ViewGroup) audioView.getParent()).removeView(audioView);
+      getDataFromServerAndPopulateView();
     }
     return audioView;
   }

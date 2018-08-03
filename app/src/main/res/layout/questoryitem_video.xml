@@ -1,17 +1,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#8c8a8c"
-    android:id="@+id/fragmentVideoId"
-    tools:context="com.questroll.ui.questories.QuestoryVideoItemFragment">
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:id="@+id/fragmentVideoId"
+  android:background="@color/questepBackgroundColor"
+  tools:context="com.questroll.ui.questories.QuestoryVideoItemFragment">
     <!-- TODO: remember about colors          android:background="@color/colorPrimary"-->
 
-      <VideoView
-        android:id="@+id/questepVideo"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_centerInParent="true" />
+  <VideoView
+    android:id="@+id/questepVideo"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"/>
 
 
   <ImageButton
@@ -21,5 +22,112 @@
     android:layout_centerInParent="true"
     android:background="@android:color/transparent"
     android:visibility="invisible"/>
+
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:layout_above="@+id/questAddButtonOnVideoView"
+    android:layout_alignParentStart="true"
+    android:background="@android:color/white"/>
+
+  <ImageButton
+    android:id="@+id/questAddButtonOnVideoView"
+    android:layout_width="50dp"
+    android:layout_height="45dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_add_25"/>
+
+  <ImageButton
+    android:id="@+id/questUserButtonOnVideoView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="14dp"
+    android:layout_alignParentEnd="true"
+    android:layout_alignTop="@+id/searchButtonOnVideoView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_user_25"/>
+
+  <ImageButton
+    android:id="@+id/searchButtonOnVideoView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="80dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignTop="@+id/homeButtonOnVideoView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_searcher_25"/>
+
+  <ImageButton
+    android:id="@+id/questoryOwnerButtonOnVideoView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="185dp"
+    android:layout_alignParentTop="true"
+    android:layout_alignStart="@+id/questUserButtonOnVideoView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_account_25"/>
+
+  <ImageButton
+    android:id="@+id/questoryShareButtonOnVideoView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="129dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignStart="@+id/questUserButtonOnVideoView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_share_white_25"/>
+
+  <ImageButton
+    android:id="@+id/homeButtonOnVideoView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="13dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignTop="@+id/notificationsButtonOnVideoView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_home_25"/>
+
+  <ImageButton
+    android:id="@+id/notificationsButtonOnVideoView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:layout_marginEnd="89dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentEnd="true"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_notification_25"/>
+
+  <ImageButton
+    android:id="@+id/questepCommentsButtonOnVideoView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="74dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignStart="@+id/questUserButtonOnVideoView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_chat_25"/>
+
+  <ImageButton
+    android:id="@+id/questepLikeButtonOnVideoView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="171dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignStart="@+id/questUserButtonOnVideoView"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_favorite_heart_button_25"/>
+
+  <ImageButton
+    android:id="@+id/questoryEnrollButtonOnVideoView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignStart="@+id/questUserButtonOnVideoView"
+    android:layout_centerVertical="true"
+    android:background="@android:color/transparent"
+    android:src="@drawable/ic_question_mark_25"/>
 
 </RelativeLayout>
